@@ -2,19 +2,21 @@ DataAnalytics-Assessment
 
 # DataAnalytics-Assessment
 
-## Table of Contents
+# Table of Contents
 
-1. [Assessment_Q1 – High-Value Customers](#assessment_q1---high-value-customers-with-multiple-products)
-3. [Assessment_Q2 – Transaction Frequency Analysis](#assessment_q2---transaction-frequency-analysis)
-4. [Assessment_Q3 – Account Inactivity Alert](#assessment_q3---account-inactivity-alert)
-5. [Assessment_Q4 – Customer Lifetime Value Estimation](#assessment_q4---customer-lifetime-value-clv-estimation)
-6. [Challenges](#challenges)
 
-Assessment_Q1.sql – High-Value Customers with Multiple Products
+- [Assessment_Q1 – High-Value Customers](#assessment_q1--high-value-customusers)
+- [Assessment_Q2 – Transaction Frequency Analysis](#assessment_q2--transaction-frequency-analysis)
+- [Assessment_Q3 – Account Inactivity Alert](#assessment_q3--account-inactivity-alert)
+- [Assessment_Q4 – Customuser Lifetime Value Estimation](#assessment_q4--customer-lifetime-value-estimation)
+- [Challenges](#challenges)
+
+
+Assessment_Q1.sql – High-Value Customusers with Multiple Products
 
 Goal:
 
--Identify high-value customers who have both a funded savings plan and a funded investment plan, highlighting potential cross-selling opportunities.
+-Identify high-value customusers who have both a funded savings plan and a funded investment plan, highlighting potential cross-selling opportunities.
 
 Approach:
 
@@ -30,22 +32,22 @@ Approach:
 
 -Used ROUND() to format total deposits to two decimal places for financial accuracy.
 
--Ordered results by total_deposits descending and limited output to the top 10 customers.
+-Ordered results by total_deposits descending and limited output to the top 10 customusers.
 
 
 Assessment_Q2.sql – Transaction Frequency Analysis
 
 Goal:
 
--Segment customers based on how frequently they transact to help the finance team identify different user behavior patterns.
+-Segment customusers based on how frequently they transact to help the finance team identify different user behavior patterns.
 
 Approach:
 
--Calculated total transactions per customer per month by extracting the year and month from transaction_date in savings_savingsaccount.
+-Calculated total transactions per customuser per month by extracting the year and month from transaction_date in savings_savingsaccount.
 
--Used a subquery to count transactions for each customer grouped by month.
+-Used a subquery to count transactions for each customuser grouped by month.
 
--Calculated the average monthly transactions per customer by averaging their monthly transaction counts.
+-Calculated the average monthly transactions per customuser by averaging their monthly transaction counts.
 
 -Categorized customers into three segments based on average monthly transactions:
 
@@ -55,7 +57,7 @@ Approach:
 
 -Low Frequency: 2 or fewer transactions/month
 
--Returned frequency category, number of customers per category, and average transactions per month.
+-Returned frequency category, number of customusers per category, and average transactions per month.
 
 -Joined with users_customuser only when necessary to focus on existing users.
 
@@ -81,28 +83,28 @@ Approach:
 
 -Used LEFT JOIN to include accounts with no transactions at all, treating their inactivity accordingly.
 
-Assessment_Q4.sql – Customer Lifetime Value (CLV) Estimation
+Assessment_Q4.sql – Customuser Lifetime Value (CLV) Estimation
 
 Goal:
 
--Estimate Customer Lifetime Value (CLV) based on account tenure and transaction volume to help the marketing team understand customer profitability.
+-Estimate Customuser Lifetime Value (CLV) based on account tenure and transaction volume to help the marketing team understand customuser profitability.
 
 Approach:
 
 -Calculated account tenure in months by finding the difference between the current date and the user’s signup date.
 
--Counted total transactions per customer from savings_savingsaccount.
+-Counted total transactions per customuser from savings_savingsaccount.
 
 -Assumed profit per transaction as 0.1% of the transaction value (confirmed_amount).
 
--Computed average profit per transaction per customer.
+-Computed average profit per transaction per customuser.
 
 -Estimated CLV using the formula:
 
 \text{CLV} = \left(\frac{\text{total_transactions}}{\text{tenure_months}}\right) \times 12 \times \text{avg_profit_per_transaction}
-Ordered customers by estimated CLV in descending order to highlight the most valuable customers.
+Ordered customusers by estimated CLV in descending order to highlight the most valuable customusers.
 
--Joined user data from users_customuser to include customer names and IDs.
+-Joined user data from users_customuser to include customuser names and IDs.
 
 Challenges
 
