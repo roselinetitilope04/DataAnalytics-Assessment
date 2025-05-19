@@ -1,16 +1,5 @@
-DataAnalytics-Assessment
 
 # DataAnalytics-Assessment
-
-# Table of Contents
-
-
-- [Assessment_Q1 – High-Value Customers](#assessment_q1--high-value-customusers)
-- [Assessment_Q2 – Transaction Frequency Analysis](#assessment_q2--transaction-frequency-analysis)
-- [Assessment_Q3 – Account Inactivity Alert](#assessment_q3--account-inactivity-alert)
-- [Assessment_Q4 – Customuser Lifetime Value Estimation](#assessment_q4--customer-lifetime-value-estimation)
-- [Challenges](#challenges)
-
 
 Assessment_Q1.sql – High-Value Customusers with Multiple Products
 
